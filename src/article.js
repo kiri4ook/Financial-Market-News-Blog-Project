@@ -1,25 +1,32 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { useParams } from "react-router-dom";
+import db from "./firebaseConfig";
 
 const ArticlePage = () => {
     const { id } = useParams();
     const [article, setArticle] = useState(null);
 
     useEffect(() => {
-        axios
-            .get("/mock.json")
-            .then((response) => {
-                const articleData = response.data.find((item) => item.id === id);
-                setArticle(articleData);
-            })
-            .catch((error) => {
+        const fetchArticle = async () => {
+            try {
+                const docRef = db.collection("articles").doc(id);
+                const docSnapshot = await docRef.get();
+                if (docSnapshot.exists) {
+                    setArticle({ id: docSnapshot.id, ...docSnapshot.data() });
+                } else {
+                    console.log("No such document!");
+                }
+            } catch (error) {
                 console.error("Ошибка при загрузке данных:", error);
-            });
+            }
+        };
+        fetchArticle();
     }, [id]);
 
     if (!article) {
-        return <div>Loading...</div>;
+        return (
+            <div className="loading-body">Loading...</div>
+        )
     }
 
     return (
@@ -44,3 +51,4 @@ const ArticlePage = () => {
 };
 
 export default ArticlePage;
+
