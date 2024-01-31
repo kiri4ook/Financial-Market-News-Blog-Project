@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Financial-Market-News-Blog-Project/static/css/main.916e40c5.css",
+    "main.js": "/Financial-Market-News-Blog-Project/static/js/main.1fc2a16b.js",
+    "static/js/787.bc7d429a.chunk.js": "/Financial-Market-News-Blog-Project/static/js/787.bc7d429a.chunk.js",
+    "index.html": "/Financial-Market-News-Blog-Project/index.html",
+    "main.916e40c5.css.map": "/Financial-Market-News-Blog-Project/static/css/main.916e40c5.css.map",
+    "main.1fc2a16b.js.map": "/Financial-Market-News-Blog-Project/static/js/main.1fc2a16b.js.map",
+    "787.bc7d429a.chunk.js.map": "/Financial-Market-News-Blog-Project/static/js/787.bc7d429a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.916e40c5.css",
+    "static/js/main.1fc2a16b.js"
+  ]
+}
